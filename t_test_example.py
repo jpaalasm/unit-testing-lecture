@@ -24,15 +24,16 @@ def two_tail_t_test(group_1_values, group_2_values):
 
 
 def main():
-    N = 200
+    N1 = 200
+    N2 = 50
     variance = 1.0
     
     mean_1 = 0.0
     mean_2 = 0.4
     
     numpy.random.seed(1)
-    group_1_values = scipy.stats.norm.rvs(mean_1, variance, size=N)
-    group_2_values = scipy.stats.norm.rvs(mean_2, variance, size=N)
+    group_1_values = scipy.stats.norm.rvs(mean_1, variance, size=N1)
+    group_2_values = scipy.stats.norm.rvs(mean_2, variance, size=N2)
     
     p_value = two_tail_t_test(group_1_values, group_2_values)
     
