@@ -27,8 +27,9 @@ def main():
     axes[0].plot(x_coordinates, y_coordinates, ".")
     
     for group_points in group_point_lists:
-        x_coordinates, y_coordinates = zip(*group_points)
-        axes[1].plot(x_coordinates, y_coordinates, ".", mew=0)
+        if len(group_points):
+            x_coordinates, y_coordinates = zip(*group_points)
+            axes[1].plot(x_coordinates, y_coordinates, ".", mew=0)
     
     plt.show()
 

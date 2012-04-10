@@ -49,31 +49,19 @@ def k_means(points, K):
 
 # -- Functions to be defined --
 
-
 def calculate_distance(x1, y1, x2, y2):
-    square_distance = (x1 - x2)**2 + (y1 - y2)**2
-    distance = np.sqrt(square_distance)
+    distance = 0
     return distance
 
 
 def calculate_centroids(group_point_lists):
-    centroids = []
-    
-    for group_points in group_point_lists:
-        centroid = calculate_mean_point(group_points)
-        centroids.append(centroid)
-    
+    group_count = len(group_point_lists)
+    centroids = [[0, 0]] * group_count
     return centroids
 
 
 def find_nearest_centroid_index(centroids, point):
-    distances = []
-    
-    for centroid in centroids:
-        distance = calculate_distance_to_centroid(point, centroid)
-        distances.append(distance)
-    
-    nearest_centroid_index = find_smallest_value_index(distances)
+    nearest_centroid_index = 0
     return nearest_centroid_index
 
 
