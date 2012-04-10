@@ -8,8 +8,8 @@ def two_tail_t_test(group_1_values, group_2_values):
     group_1_mean = numpy.mean(group_1_values)
     group_2_mean = numpy.mean(group_2_values)
     
-    group_1_var = numpy.var(group_1_values)
-    group_2_var = numpy.var(group_2_values)
+    group_1_var = numpy.var(group_1_values, ddof=1)
+    group_2_var = numpy.var(group_2_values, ddof=1)
     
     N1 = len(group_1_values)
     N2 = len(group_2_values)
